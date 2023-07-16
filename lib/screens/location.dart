@@ -72,11 +72,11 @@ class _LicationPageState extends State<LicationPage> {
           case DocumentChangeType.added:
             print("New City: ${change.doc.data()}");
             if (widget.order.orderID == change.doc.data()!['orderID']) {
-              if (change.doc.data()!['orderStatus'] == 4) {
+              if (int.parse(change.doc.data()!['orderStatus']) == 4) {
                 showalertCancel();
               } else {
                 setState(() {
-                  status = change.doc.data()!['orderStatus'];
+                  status = int.parse(change.doc.data()!['orderStatus']);
                 });
               }
             }
@@ -88,7 +88,7 @@ class _LicationPageState extends State<LicationPage> {
                 showalertCancel();
               } else {
                 setState(() {
-                  status = change.doc.data()!['orderStatus'];
+                  status = int.parse(change.doc.data()!['orderStatus']);
                 });
               }
             }
