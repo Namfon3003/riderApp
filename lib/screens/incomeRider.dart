@@ -592,13 +592,6 @@ class _IncomeState extends State<Income> {
                     ],
                   ),
                 ),
-
-                // TextButton(
-                //   child: const Text('Comferm'),
-                //   onPressed: () {
-                //     Navigator.of(context).pop();
-                //   },
-                // ),
               ],
             );
           },
