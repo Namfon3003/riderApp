@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 import 'package:riderapp/models/transaction_model.dart';
 import 'package:riderapp/models/wallet_model.dart';
 import 'package:riderapp/screens/home.dart';
+import 'package:riderapp/screens/statistics.dart';
 
 import '../component/dropdownWidgetQ.dart';
 
@@ -226,39 +227,77 @@ class _IncomeState extends State<Income> {
             ),
             Positioned(
               top: 360,
-              left: 150,
-              child: MaterialButton(
-                onPressed: () {
-                  _showMyDialog();
-                },
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Image(
-                        width: 50,
-                        height: 50,
-                        image: AssetImage("assets/images/money-transfer.png")),
-                    SizedBox(
-                      height: 5,
+              left: 100,
+              child: Row(
+                children: [
+                  MaterialButton(
+                    onPressed: () {
+                      _showMyDialog();
+                    },
+                    child: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Image(
+                            width: 50,
+                            height: 50,
+                            image:
+                                AssetImage("assets/images/money-transfer.png")),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text("ถอนเงิน",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 57, 97, 109),
+                              // fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            )),
+                        // Divider(
+                        //   color: Colors.black,
+                        // ),
+                      ],
                     ),
-                    Text("Bank Transfer",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 57, 97, 109),
-                          // fontWeight: FontWeight.bold,
-                          fontSize: 15,
-                        )),
-                    // Divider(
-                    //   color: Colors.black,
-                    // ),
-                  ],
-                ),
+                  ),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  MaterialButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Statistics()));
+                    },
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Image(
+                            width: 50,
+                            height: 50,
+                            image: AssetImage("assets/images/graph.png")),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text("สถิติ",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 57, 97, 109),
+                              // fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            )),
+                        // Divider(
+                        //   color: Colors.black,
+                        // ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
             Positioned(
               top: 185,
               right: 0,
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
                 width: MediaQuery.of(context).size.width * 0.85,
                 height: 145,
                 decoration: BoxDecoration(
