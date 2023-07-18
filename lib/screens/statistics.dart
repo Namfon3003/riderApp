@@ -378,7 +378,7 @@ class _StatisticsState extends State<Statistics> {
             "/" +
             newDate[1] +
             "/" +
-            (int.parse(newDate[2]) - 543).toString();
+            (convertBEtoAD(int.parse(newDate[2]))).toString();
         if (item.date.split(" ")[0] == dateCheck || tDate == dateCheck) {
           if (item.status == 4) {
             countError++;
@@ -393,5 +393,9 @@ class _StatisticsState extends State<Statistics> {
       countError;
       countCom;
     });
+  }
+
+  convertBEtoAD(int be) {
+    return be - 543;
   }
 }
